@@ -1,0 +1,3 @@
+$('section.slider img').css('height', $(window).height() - $('section.info').height() - $('header').height() - 31);
+
+section.info + header = это блоки которые перед слайдером идут
