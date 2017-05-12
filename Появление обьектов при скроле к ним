@@ -1,0 +1,5 @@
+$(window).scroll(function(){
+    if ( $(window).scrollTop() <= $('#four-animation').position().top ) {
+    $('#four-animation > div').addClass('animated flipInX');
+	}
+});
