@@ -1,0 +1,6 @@
+$(function(){
+var countLi = $('.price').size();
+if ( countLi > '1' ) {
+    $('.price-box-product > .price').css('display','none');
+};
+}); 
