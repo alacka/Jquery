@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script> 
+  </head>
+  <body>
+    <div class="elems">
+      <div class="div1">...</div>
+      <div class="div2">...</div>
+      <div class="div3">...</div>
+      <div class="div4">...</div>
+      <div class="div5">...</div>
+      <div class="div6">...</div>
+      <div class="div7">...</div>
+      <div class="div8">...</div>
+      <div class="div9">...</div>
+      <div class="div10">...</div>
+    </div>
+    <script>
+      var context = $('.elems');
+      while( context.children('div:not(.wrap-div)' ).length){
+        context.children('div:not(.wrap-div):lt(5)').wrapAll('<div class="wrap-div">');
+      }
+    </script>
+  </body>
+</html>
