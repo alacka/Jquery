@@ -1,0 +1,84 @@
+js
+ function htmSlider(){
+  /* Зададим следующие параметры */
+  /* обертка слайдера */
+  var slideWrap = jQuery('.carousel-box');
+  /* кнопки вперед/назад и старт/пауза */
+  var nextLink = jQuery('.carousel-arrow-right');
+  var prevLink = jQuery('.carousel-arrow-left');
+  var playLink = jQuery('.auto');
+  /* Проверка на анимацию */
+  var is_animate = false;
+  /* ширина слайда с отступами */
+  var slideWidth = jQuery('.carousel').outerWidth();
+  /* смещение слайдера */
+  var scrollSlider = slideWrap.position().left - slideWidth;
+    
+  /* Клик по ссылке на следующий слайд */
+  nextLink.click(function(){
+   if(!slideWrap.is(':animated')) {
+    slideWrap.animate({left: scrollSlider}, 500, function(){
+     slideWrap
+      .find('.carousel:first')
+      .appendTo(slideWrap)
+      .parent()
+      .css({'left': 0});
+    });
+   }
+  });
+
+  /* Клик по ссылке на предыдующий слайд */
+  prevLink.click(function(){
+   if(!slideWrap.is(':animated')) {
+    slideWrap
+     .css({'left': scrollSlider})
+     .find('.carousel:last')
+     .prependTo(slideWrap)
+     .parent()
+     .animate({left: 0}, 500);
+   }
+  });
+    
+  /* Функция автоматической прокрутки слайдера */
+  function autoplay(){
+   if(!is_animate){
+    is_animate = true;
+    slideWrap.animate({left: scrollSlider}, 500, function(){
+     slideWrap
+      .find('.carousel:first')
+      .appendTo(slideWrap)
+      .parent()
+      .css({'left': 0});
+     is_animate = false;
+    });
+   }
+  }
+    
+
+
+ }
+ 
+ /* иницилизируем функцию слайдера */
+htmSlider();
+
+
+
+
+html
+
+<div class="carousel-arrow-left"></div>
+<div class="carousel-arrow-right"></div>
+
+
+<div class="carousel-wrap">
+
+<div class="carousel-box" >
+
+	<div class="carousel">1</div>
+	<div class="carousel">2</div>
+	<div class="carousel">3</div>
+
+
+</div>
+
+</div>
