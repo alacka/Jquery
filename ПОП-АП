@@ -51,6 +51,40 @@ function call() {
 
 
 
+
+
+
+
+<?
+if ($_POST['email'] == '') {
+
+$name= $_POST['name']; 
+$phone= $_POST['phone'];
+$urlpage= 'Страница : ' . $_POST['urlpage'];
+$usluganame= 'Заказ услуги <br>Название услуги : ' . $_POST['usluganame'];
+
+$phonetosend= 'fed140493@yandex.ru';
+
+$header = array(
+    "From: Форма с donative <Форма с donative>",
+	"Subject: Форма с donative",
+    "MIME-Version: 1.0",
+    "Content-Type: text/html;charset=utf-8"
+);
+mail($phonetosend, "Форма с donative", "$usluganame \n\nИмя : $name \n\nТелефон : $phone \n\n$urlpage", implode("\r\n", $header));
+
+echo "Сообщение отправлено";
+}
+?>
+
+
+
+
+
+
+
+
+
 <style>
 .popupformnew {
     position: fixed;
