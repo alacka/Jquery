@@ -1,0 +1,111 @@
+<div class="popupform popupformnew">
+    <form method="POST" id="formx" action="javascript:void(null);" onsubmit="call()">
+        <span class="closeform">X</span>
+        <div class="namform">Звонов</div>
+        <input name="name" placeholder="Имя">
+        <input name="phone" placeholder="Телефон">
+        <input name="email" placeholder="email" value="" style="display: none!important;">
+        <input name="urlpage" value="<?php echo the_permalink(); ?>" style="display: none!important;">
+        <input name="usluganame" class="usluganame" value="" style="display: none!important;">
+        <button>Отправить</button>
+        <p id="results"></p>
+    </form>
+</div>
+
+
+
+<script type="text/javascript">
+
+
+$('.closeform').on('click',function(){
+    $('.popupform').slideToggle();
+})
+
+$('.linkform').on('click',function(event){
+    event.preventDefault();
+    var namform = $(this).attr('namform');
+    $('.namform').html(namform);
+    $('.popupform').slideToggle();
+
+})
+
+
+
+function call() {
+  var msg   = $('#formx').serialize();
+    $.ajax({
+      type: 'POST',
+      url: 'send.php',
+      data: msg,
+      success: function(data) {
+        $('#results').html(data);
+      },
+      error:  function(xhr, str){
+    alert('Возникла ошибка: ' + xhr.responseCode);
+      }
+    });
+}
+
+</script>
+
+
+
+
+<style>
+.popupformnew {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+}
+.popupformnew form {
+    display: table;
+    margin: 5% auto 0;
+    background: #fff;
+    padding: 20px;
+    position: relative;
+}
+.popupformnew form span {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: 700;
+}
+.popupformnew form div {
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+.popupformnew form input {
+    width: 100%;
+    box-sizing: border-box;
+    background: #f3f3f3;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+.popupformnew form button {
+    display: table;
+    border: none;
+    margin: 0 auto;
+    background: #9E6602;
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.popupform {
+    display: none;
+}
+#results {
+    text-align: center;
+    display: table;
+    margin: 15px auto 0;
+    color: green;
+}
+</style>
