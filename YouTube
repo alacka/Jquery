@@ -1,0 +1,84 @@
+<div class="playblock" id="playblock">Смотреть Видео-Обращение</div>
+
+
+
+
+<div class="poupvideo">
+    <div>
+        <div class="closepopupvideo">X</div>
+    <div id="ytplayer"></div>
+    </div>
+</div>
+
+
+
+
+<script>
+  // Load the IFrame Player API code asynchronously.
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/player_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  // Replace the 'ytplayer' element with an <iframe> and
+  // YouTube player after the API code downloads.
+  var player;
+  function onYouTubePlayerAPIReady() {
+    player = new YT.Player('ytplayer', {
+      height: '360',
+      width: '640',
+      videoId: 'Zj_CUxi0aEc'
+    });
+  }
+  
+  
+  
+  $('#playblock').click(function() { 
+      $('.poupvideo').slideToggle();
+        player.playVideo();
+    });
+    
+    $('.closepopupvideo').click(function() { 
+        player.stopVideo();
+        $('.poupvideo').slideToggle();
+    });
+    
+</script>
+
+
+
+
+
+
+
+.poupvideo {
+    position:fixed;
+    top: 0;
+    left:0;
+    right:0;
+    display:none;
+    margin: 0 auto;
+    background: rgba(0,0,0,.52);
+    height: 100%;
+}
+.poupvideo > div {
+    display:Table;
+    margin: 10% auto 0;
+    position:relative;
+}
+.closepopupvideo {
+background: #fff;
+box-shadow: 0 0 5px rgba(0,0,0,.2);
+border-radius: 150px;
+display: Table;
+padding: 1px 6px;
+position: absolute;
+right: -20px;
+top: -20px;
+font-size: 15px;
+font-family: Arial;
+cursor: pointer;
+}
+
+
+
