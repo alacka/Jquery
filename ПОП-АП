@@ -101,14 +101,6 @@ echo "Сообщение отправлено";
     padding: 20px;
     position: relative;
 }
-.popupformnew form span {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 18px;
-    cursor: pointer;
-    font-weight: 700;
-}
 .popupformnew form div {
     font-size: 20px;
     font-weight: 700;
@@ -134,12 +126,28 @@ echo "Сообщение отправлено";
     cursor: pointer;
 }
 .popupform {
-    display: none;
+    /*display: none;*/
 }
 #results {
     text-align: center;
     display: table;
     margin: 15px auto 0;
     color: green;
+}
+.popupformnew form span {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: 700;
+}
+.closeform:before {
+	content: "";
+	width: 15px;
+	height: 15px;
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACABAMAAAAxEHz4AAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAAT2AAAE9gGYDiZUAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAABVQTFRF////AAAAAAAAAAAAAAAAAAAAAAAAPYbscQAAAAZ0Uk5TAARUp6v7ZOI89wAAAgBJREFUaN6lmruVgzAQRQUVEFCAz9mjBjbYnMQFOKCBxdN/CQ6WtUDoM8/XmY5HfhcQ83UIIYQwfAf58zUdFvPzpu4f1yUthrs91B+ItiWE2UxFGFez5QBgKkI0SwizmYowrmZvhOFupiJEs4Qwm6kIfwA7wg4gIcR9yzYlAAXhH8BsOQAICPG9ZZsSgB8hAZgt4SctvAjxsOX3tPIhHAHskS9FgOctyAgXRRXhKqghFPQ0hJKcglBUUxDKYn6EipYfoSblRagqeRHqQj6Eho4PoSXjQWiqeBDaIn2EjkYfoSfR+76r0DPoX2PbwnGX2yae59yycZ20lpHvrNetnG9b3cz7vtfs3B6nZuj3eWVLweuWTRW/X7KVIk/JWIt9V2sx+l7N1fif28sZSL5Bz4HOO/QUKEPQATIEHSBD+ADgjPABQA1BqQciAygjaDVRZAAlBLUujAzgiqDXxpEB5Ag6QIagA/AfwJdAbyJ+jPQg4aNMXyb8OlOHgl0adarYrdPAgkMbDa44vNMEA6c4NMnCaR5NNHGqS5NtnO7TggOXPLTowmUfLTxx6UuLb1z+0wYEboHQJgxuA9FGFG6F0WYcbgfShiRuidKmLG4L08Y0bo3T5jweD9ABBR6R4CENHhPhQRUeleFhHR8X4oElH5nioS0fG+PBNR+d4+E9+fvAC4KFTDHunKDhAAAAAElFTkSuQmCC) no-repeat;
+	background-size: cover;
+	display: table;
 }
 </style>
