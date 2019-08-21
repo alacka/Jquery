@@ -3,3 +3,12 @@ http://johnpolacek.github.io/stacktable.js/
 https://github.com/johnpolacek/stacktable.js/blob/master/stacktable.js
 
 https://cdnjs.com/libraries#
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stacktable.js/1.0.3/stacktable.min.js" integrity="sha256-tb/RDh30umJyDUbdVwnQnuWazPjjoHOQnC9dqFD598w=" crossorigin="anonymous"></script>
+<script>
+$('.item-page table').stacktable();
+</script>
