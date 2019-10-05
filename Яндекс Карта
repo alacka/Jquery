@@ -1,0 +1,32 @@
+<script src="http://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU" type="text/javascript"></script>
+<script type="text/javascript">
+        // Как только будет загружен API и готов DOM, выполняем инициализацию
+        ymaps.ready(init);
+ 
+        function init () {
+            // Создание экземпляра карты и его привязка к контейнеру с
+            // заданным id ("map")
+            var myMap = new ymaps.Map('map', {
+                    // При инициализации карты, обязательно нужно указать
+                    // ее центр и коэффициент масштабирования
+                    center: [55.683067, 37.303647],
+                    zoom: 15
+                });
+ 
+				// Создание метки 
+				var myGeoObject = new ymaps.GeoObject({
+                    // Геометрия.
+                    geometry: {
+                        // Тип геометрии - точка
+                        type: "Point",
+                        // Координаты точки.
+                        coordinates: [55.683067, 37.303647]
+                    }
+                });
+ 
+			// Добавление метки на карту
+			myMap.geoObjects.add(myGeoObject);
+ 
+ 
+        }
+    </script>
