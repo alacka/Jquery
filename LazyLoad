@@ -1,0 +1,8 @@
+<img class="lazy" data-original="<? the_post_thumbnail_url('medium'); ?>" alt="<?php the_title();?>" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"> 
+
+
+
+
+ <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+ <script type="text/javascript">$("img.lazy").lazyload({effect : "fadeIn"});</script>
