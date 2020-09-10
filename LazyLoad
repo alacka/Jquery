@@ -5,6 +5,12 @@
      
      
 
- <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js"></script>
 
  <script type="text/javascript">$("img.lazy").lazyload({effect : "fadeIn"});</script>
+
+
+
+
+источник - https://appelsiini.net/projects/lazyload/
+lazyload - можно ставить беж жквери лоад
