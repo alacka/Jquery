@@ -14,3 +14,11 @@
 
 источник - https://appelsiini.net/projects/lazyload/
 lazyload - можно ставить беж жквери лоад
+
+
+
+
+
+<script type="text/javascript">
+lazyload();
+</script>
