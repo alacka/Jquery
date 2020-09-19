@@ -22,3 +22,23 @@ lazyload - можно ставить беж жквери лоад
 <script type="text/javascript">
 lazyload();
 </script>
+
+
+
+
+
+add_filter('the_content', function ($content) {
+	//-- Change src to data attributes.
+	$content = preg_replace("/<img(.*?)(src=)(.*?)>/i", '<img$1data-$2$3>', $content);
+
+    	//-- Change srcset to data attributes.
+    	$content = preg_replace("/<img(.*?)(srcset=)(.*?)>/i", '<img$1data-$2$3>', $content);
+
+	//-- Add .lazy-load class to each image that already has a class.
+	$content = preg_replace('/<img(.*?)class=\"(.*?)\"(.*?)>/i', '<img$1class="$2 lazy"$3>', $content);
+
+	//-- Add .lazy-load class to each image that doesn't already have a class.
+	$content = preg_replace('/<img((.(?!class=))*)\/?>/i', '<img class="lazy"$1>', $content);
+	
+	return $content;
+});
