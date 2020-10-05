@@ -1,0 +1,10 @@
+<script>
+$( window ).load(function() {
+	setTimeout(function (){
+
+	var iframeurl = $('iframe').attr('lazy-load');
+	$('iframe').attr('src', iframeurl);
+	
+	}, 2000);
+});
+</script>
