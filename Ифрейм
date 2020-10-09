@@ -8,3 +8,20 @@ $( window ).load(function() {
 	}, 2000);
 });
 </script>
+
+
+
+
+
+
+
+<script>
+$(window).on('load', function() {
+	setTimeout(function (){
+
+	var iframeurl = $('iframe').attr('lazy-load');
+	$('iframe').attr('src', iframeurl);
+	
+	}, 2000);
+});
+</script>
